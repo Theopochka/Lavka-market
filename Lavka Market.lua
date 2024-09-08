@@ -1,5 +1,5 @@
 script_name('Lavka Market')
-script_version('2.0')
+script_version('2.5')
 script_author('Theopka')
 
 local dlstatus = require('moonloader').download_status
@@ -357,7 +357,7 @@ autologin =
     {
         nickname = "Your_Nickname",
         password = "yourpassword",
-        spawn = "[{\"id\": 0, \"spawn\": \"Последнее место выхода\" },{\"id\": 1, \"spawn\": \"Стандартный спавн\" }]", 
+        spawn = "[{\"id\": 0, \"spawn\": \"ГЏГ®Г±Г«ГҐГ¤Г­ГҐГҐ Г¬ГҐГ±ГІГ® ГўГ»ГµГ®Г¤Г \" },{\"id\": 1, \"spawn\": \"Г‘ГІГ Г­Г¤Г Г°ГІГ­Г»Г© Г±ГЇГ ГўГ­\" }]", 
         spawn_use = 0,
     },  
     autoreconnect = {
@@ -392,32 +392,32 @@ else
 end
 end
 
-sampAddChatMessage("[Lavka Market]: {FFFFFF} Проверка наличия обновлений...", 0x21D518)
+sampAddChatMessage("[Lavka Market]: {FFFFFF} ГЏГ°Г®ГўГҐГ°ГЄГ  Г­Г Г«ГЁГ·ГЁГї Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГ©...", 0x21D518)
     local currentVersionFile = io.open(lmPath, "r")
     local currentVersion = currentVersionFile:read("*a")
     currentVersionFile:close()
     local response = http.request(lmUrl)
     if response and response ~= currentVersion then
-    	sampAddChatMessage("[Lavka Market]: {FFFFFF} У вас не актуальная версия! Для обновления перейдите во вкладку Инфо", 0x21D518)
+    	sampAddChatMessage("[Lavka Market]: {FFFFFF} Г“ ГўГ Г± Г­ГҐ Г ГЄГІГіГ Г«ГјГ­Г Гї ГўГҐГ°Г±ГЁГї! Г„Г«Гї Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГї ГЇГҐГ°ГҐГ©Г¤ГЁГІГҐ ГўГ® ГўГЄГ«Г Г¤ГЄГі Г€Г­ГґГ®", 0x21D518)
     else
-    	sampAddChatMessage("[Lavka Market]: {FFFFFF} У вас актуальная версия скрипта.", 0x21D518)
+    	sampAddChatMessage("[Lavka Market]: {FFFFFF} Г“ ГўГ Г± Г ГЄГІГіГ Г«ГјГ­Г Гї ГўГҐГ°Г±ГЁГї Г±ГЄГ°ГЁГЇГІГ .", 0x21D518)
     end
     
 local function updateScript(scriptUrl, scriptPath)
-    sampAddChatMessage("[Lavka Market]: {FFFFFF} Проверка наличия обновлений...", 0x21D518)
+    sampAddChatMessage("[Lavka Market]: {FFFFFF} ГЏГ°Г®ГўГҐГ°ГЄГ  Г­Г Г«ГЁГ·ГЁГї Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГ©...", 0x21D518)
 	local response = http.request(scriptUrl)
     if response and response ~= currentVersion then
-        sampAddChatMessage("[Lavka Market]: {FFFFFF} Доступна новая версия скрипта! Обновление...", 0x21D518)
+        sampAddChatMessage("[Lavka Market]: {FFFFFF} Г„Г®Г±ГІГіГЇГ­Г  Г­Г®ГўГ Гї ГўГҐГ°Г±ГЁГї Г±ГЄГ°ГЁГЇГІГ ! ГЋГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ...", 0x21D518)
         
         local success = downloadFile(scriptUrl, scriptPath)
         if success then
-            sampAddChatMessage("[Lavka Market]: {FFFFFF} Скрипт успешно обновлен.", 0x21D518)
+            sampAddChatMessage("[Lavka Market]: {FFFFFF} Г‘ГЄГ°ГЁГЇГІ ГіГ±ГЇГҐГёГ­Г® Г®ГЎГ­Г®ГўГ«ГҐГ­.", 0x21D518)
             thisScript():reload()
         else
-            sampAddChatMessage("[Lavka Market]: {FFFFFF} Не удалось обновить скрипт.", 0x21D518)
+            sampAddChatMessage("[Lavka Market]: {FFFFFF} ГЌГҐ ГіГ¤Г Г«Г®Г±Гј Г®ГЎГ­Г®ГўГЁГІГј Г±ГЄГ°ГЁГЇГІ.", 0x21D518)
         end
     else
-        sampAddChatMessage("[Lavka Market]: {FFFFFF} Скрипт уже является последней версией.", 0x21D518)
+        sampAddChatMessage("[Lavka Market]: {FFFFFF} Г‘ГЄГ°ГЁГЇГІ ГіГ¦ГҐ ГїГўГ«ГїГҐГІГ±Гї ГЇГ®Г±Г«ГҐГ¤Г­ГҐГ© ГўГҐГ°Г±ГЁГҐГ©.", 0x21D518)
     end
 end
 
@@ -445,8 +445,8 @@ for i = 1, 1000 do
         boolVariables[i] = imgui.new.bool()
     end
 end
--- Теперь переменные доступны напрямую из массивов без глобальной области видимости
--- Например, variables[1].se, variables[1].i, boolVariables[1]
+-- Г’ГҐГЇГҐГ°Гј ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г»ГҐ Г¤Г®Г±ГІГіГЇГ­Г» Г­Г ГЇГ°ГїГ¬ГіГѕ ГЁГ§ Г¬Г Г±Г±ГЁГўГ®Гў ГЎГҐГ§ ГЈГ«Г®ГЎГ Г«ГјГ­Г®Г© Г®ГЎГ«Г Г±ГІГЁ ГўГЁГ¤ГЁГ¬Г®Г±ГІГЁ
+-- ГЌГ ГЇГ°ГЁГ¬ГҐГ°, variables[1].se, variables[1].i, boolVariables[1]
 bnd = {
 	imgui.new.int(0),
 	new.char[100](),
@@ -457,7 +457,7 @@ local activated = false
 
 local eat = new.bool(ini.eat.autoeat)
 local eat_choice = new.int(ini.eat.eatchoice)
-local method = {u8'Чипсы', u8'Рыба', u8'Оленина'}
+local method = {u8'Г—ГЁГЇГ±Г»', u8'ГђГ»ГЎГ ', u8'ГЋГ«ГҐГ­ГЁГ­Г '}
 local items = imgui.new['const char*'][#method](method)
 
 local theme = new.int(ini.cfgtheme.theme)
@@ -488,14 +488,14 @@ local Lavkaaiki34b = imgui.new.bool(ini.cfg.Lavkaaiki34b)
 
 function save_log(logtext, filename)
     
-    -- Открываем файл для добавления нового лога
+    -- ГЋГІГЄГ°Г»ГўГ ГҐГ¬ ГґГ Г©Г« Г¤Г«Гї Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГї Г­Г®ГўГ®ГЈГ® Г«Г®ГЈГ 
     local file = io.open(file_path, "a")
 
     if file then
-        -- Записываем лог в файл с датой и временем
+        -- Г‡Г ГЇГЁГ±Г»ГўГ ГҐГ¬ Г«Г®ГЈ Гў ГґГ Г©Г« Г± Г¤Г ГІГ®Г© ГЁ ГўГ°ГҐГ¬ГҐГ­ГҐГ¬
         file:write(current_time .. " " .. logtext .. "\n")
 
-        -- Закрываем файл
+        -- Г‡Г ГЄГ°Г»ГўГ ГҐГ¬ ГґГ Г©Г«
         file:close()
     end
 end
@@ -539,25 +539,25 @@ local lovkanamed = "24/7"
 
 
 function sampev.onServerMessage(color, text)
-    if text:find('^%[Подсказка%] {FFFFFF}Вы успешно арендовали лавку для продажи') or text:find('^%[Подсказка%] {FFFFFF}Вы успешно выставили лавку для продажи.покупки товара.$') then
-        save_log("Вы арендовали лавку", logfile)
-        msg('Для того, чтобы открыть меню введите команду: /cent')
+    if text:find('^%[ГЏГ®Г¤Г±ГЄГ Г§ГЄГ %] {FFFFFF}Г‚Г» ГіГ±ГЇГҐГёГ­Г® Г Г°ГҐГ­Г¤Г®ГўГ Г«ГЁ Г«Г ГўГЄГі Г¤Г«Гї ГЇГ°Г®Г¤Г Г¦ГЁ') or text:find('^%[ГЏГ®Г¤Г±ГЄГ Г§ГЄГ %] {FFFFFF}Г‚Г» ГіГ±ГЇГҐГёГ­Г® ГўГ»Г±ГІГ ГўГЁГ«ГЁ Г«Г ГўГЄГі Г¤Г«Гї ГЇГ°Г®Г¤Г Г¦ГЁ.ГЇГ®ГЄГіГЇГЄГЁ ГІГ®ГўГ Г°Г .$') then
+        save_log("Г‚Г» Г Г°ГҐГ­Г¤Г®ГўГ Г«ГЁ Г«Г ГўГЄГі", logfile)
+        msg('Г„Г«Гї ГІГ®ГЈГ®, Г·ГІГ®ГЎГ» Г®ГІГЄГ°Г»ГІГј Г¬ГҐГ­Гѕ ГўГўГҐГ¤ГЁГІГҐ ГЄГ®Г¬Г Г­Г¤Гі: /cent')
     if Lavkaaikib[0] then
    CentralGlMenu[0] = not CentralGlMenu[0]
 end
 if Lavkaaiki34b[0] then
 SkupSellzxc[0] = not SkupSellzxc[0]
 end
-    elseif  (text:find('^%[Информация%] {FFFFFF}Вы отказались от аренды лавки') or text:find('^%[Информация%] {FFFFFF}Вы сняли лавку') or text:find('^%[Информация%] {FFFFFF}У Вас закончилось время для настройки товаров')) then
-        save_log("Вы покинули лавку", logfile)
+    elseif  (text:find('^%[Г€Г­ГґГ®Г°Г¬Г Г¶ГЁГї%] {FFFFFF}Г‚Г» Г®ГІГЄГ Г§Г Г«ГЁГ±Гј Г®ГІ Г Г°ГҐГ­Г¤Г» Г«Г ГўГЄГЁ') or text:find('^%[Г€Г­ГґГ®Г°Г¬Г Г¶ГЁГї%] {FFFFFF}Г‚Г» Г±Г­ГїГ«ГЁ Г«Г ГўГЄГі') or text:find('^%[Г€Г­ГґГ®Г°Г¬Г Г¶ГЁГї%] {FFFFFF}Г“ Г‚Г Г± Г§Г ГЄГ®Г­Г·ГЁГ«Г®Г±Гј ГўГ°ГҐГ¬Гї Г¤Г«Гї Г­Г Г±ГІГ°Г®Г©ГЄГЁ ГІГ®ГўГ Г°Г®Гў')) then
+        save_log("Г‚Г» ГЇГ®ГЄГЁГ­ГіГ«ГЁ Г«Г ГўГЄГі", logfile)
 if Lavkaaikib[0] then
    CentralGlMenu[0] = false
 end
 if Lavkaaiki34b[0] then
 SkupSellzxc[0] = false
 end
-    elseif (text:find('^%[Информация%] {FFFFFF}Ваша лавка была закрыта')) then
-        save_log("Вы потеряли лавку", logfile)
+    elseif (text:find('^%[Г€Г­ГґГ®Г°Г¬Г Г¶ГЁГї%] {FFFFFF}Г‚Г ГёГ  Г«Г ГўГЄГ  ГЎГ»Г«Г  Г§Г ГЄГ°Г»ГІГ ')) then
+        save_log("Г‚Г» ГЇГ®ГІГҐГ°ГїГ«ГЁ Г«Г ГўГЄГі", logfile)
 if Lavkaaikib[0] then
    CentralGlMenu[0] = false
 end
@@ -566,12 +566,12 @@ SkupSellzxc[0] = false
 end
     end
     
-    if text:find('^.+ купил у вас .+, вы получили %$%d+ от продажи %(комиссия %d процент%(а%)%)') then
-        local name, product, money = text:match('^(.+) купил у вас (.+), вы получили %$(%d+) от продажи %(комиссия %d процент%(а%)%)')
-        save_log(name.." купил у вас "..product.." за "..money.."$", logfile)
-    elseif text:find('^Вы купили .+ у игрока .+ за %$%d+') then
-        local product, name, money = text:match('^Вы купили (.+) у игрока (.+) за %$(%d+)')
-        save_log(name.." продал вам "..product.." за "..money.."$", logfile)
+    if text:find('^.+ ГЄГіГЇГЁГ« Гі ГўГ Г± .+, ГўГ» ГЇГ®Г«ГіГ·ГЁГ«ГЁ %$%d+ Г®ГІ ГЇГ°Г®Г¤Г Г¦ГЁ %(ГЄГ®Г¬ГЁГ±Г±ГЁГї %d ГЇГ°Г®Г¶ГҐГ­ГІ%(Г %)%)') then
+        local name, product, money = text:match('^(.+) ГЄГіГЇГЁГ« Гі ГўГ Г± (.+), ГўГ» ГЇГ®Г«ГіГ·ГЁГ«ГЁ %$(%d+) Г®ГІ ГЇГ°Г®Г¤Г Г¦ГЁ %(ГЄГ®Г¬ГЁГ±Г±ГЁГї %d ГЇГ°Г®Г¶ГҐГ­ГІ%(Г %)%)')
+        save_log(name.." ГЄГіГЇГЁГ« Гі ГўГ Г± "..product.." Г§Г  "..money.."$", logfile)
+    elseif text:find('^Г‚Г» ГЄГіГЇГЁГ«ГЁ .+ Гі ГЁГЈГ°Г®ГЄГ  .+ Г§Г  %$%d+') then
+        local product, name, money = text:match('^Г‚Г» ГЄГіГЇГЁГ«ГЁ (.+) Гі ГЁГЈГ°Г®ГЄГ  (.+) Г§Г  %$(%d+)')
+        save_log(name.." ГЇГ°Г®Г¤Г Г« ГўГ Г¬ "..product.." Г§Г  "..money.."$", logfile)
     end
 end 
 imgui.OnFrame(function() return LogMenu[0] end, function(player)
@@ -591,7 +591,7 @@ imgui.OnFrame(function() return LogMenu[0] end, function(player)
         openlog:close()
     end
 end
-if imgui.Button(u8'Закрыть', imgui.ImVec2(-1, 29)) then
+if imgui.Button(u8'Г‡Г ГЄГ°Г»ГІГј', imgui.ImVec2(-1, 29)) then
 LogMenu[0] = not LogMenu[0]
 end
     imgui.End()
@@ -601,51 +601,51 @@ end
   
     imgui.SetNextWindowPos(imgui.ImVec2(sw / 2, sh / 2), imgui.Cond.FirstUseEver, imgui.ImVec2(0.5, 0.5))
     imgui.Begin(u8'Central rrADD Vip Version', recMenu, imgui.WindowFlags.AlwaysAutoResize + imgui.WindowFlags.NoTitleBar)
-         if imgui.Checkbox(u8'Автореконнект при "You banned from this server"', onBanned) then
+         if imgui.Checkbox(u8'ГЂГўГІГ®Г°ГҐГЄГ®Г­Г­ГҐГЄГІ ГЇГ°ГЁ "You banned from this server"', onBanned) then
             if not ini.cfg.AutoReconnect then
                 onBanned[0] = not onBanned[0]
-                msg("Автореконнект выключен. Редактирование также отключено")
+                msg("ГЂГўГІГ®Г°ГҐГЄГ®Г­Г­ГҐГЄГІ ГўГ»ГЄГ«ГѕГ·ГҐГ­. ГђГҐГ¤Г ГЄГІГЁГ°Г®ГўГ Г­ГЁГҐ ГІГ ГЄГ¦ГҐ Г®ГІГЄГ«ГѕГ·ГҐГ­Г®")
             else
-                msg("Вы "..(onBanned[0] and "включили" or "выключили") .. " автореконнект при забаненом подключении")      
+                msg("Г‚Г» "..(onBanned[0] and "ГўГЄГ«ГѕГ·ГЁГ«ГЁ" or "ГўГ»ГЄГ«ГѕГ·ГЁГ«ГЁ") .. " Г ГўГІГ®Г°ГҐГЄГ®Г­Г­ГҐГЄГІ ГЇГ°ГЁ Г§Г ГЎГ Г­ГҐГ­Г®Г¬ ГЇГ®Г¤ГЄГ«ГѕГ·ГҐГ­ГЁГЁ")      
                 ini.autoreconnect.onBanned = onBanned[0]
                 cfg_save()
             end
         end
-        if imgui.Checkbox(u8'Автореконнект при пароле сервера', onPassword) then
+        if imgui.Checkbox(u8'ГЂГўГІГ®Г°ГҐГЄГ®Г­Г­ГҐГЄГІ ГЇГ°ГЁ ГЇГ Г°Г®Г«ГҐ Г±ГҐГ°ГўГҐГ°Г ', onPassword) then
             if not ini.cfg.AutoReconnect then
                 onPassword[0] = not onPassword[0]
-                msg("Автореконнект выключен. Редактирование также отключено")
+                msg("ГЂГўГІГ®Г°ГҐГЄГ®Г­Г­ГҐГЄГІ ГўГ»ГЄГ«ГѕГ·ГҐГ­. ГђГҐГ¤Г ГЄГІГЁГ°Г®ГўГ Г­ГЁГҐ ГІГ ГЄГ¦ГҐ Г®ГІГЄГ«ГѕГ·ГҐГ­Г®")
             else
-                msg("Вы "..(onPassword[0] and "включили" or "выключили") .. " автореконнект при пароле сервера")  
+                msg("Г‚Г» "..(onPassword[0] and "ГўГЄГ«ГѕГ·ГЁГ«ГЁ" or "ГўГ»ГЄГ«ГѕГ·ГЁГ«ГЁ") .. " Г ГўГІГ®Г°ГҐГЄГ®Г­Г­ГҐГЄГІ ГЇГ°ГЁ ГЇГ Г°Г®Г«ГҐ Г±ГҐГ°ГўГҐГ°Г ")  
                 ini.autoreconnect.onPassword = onPassword[0] 
                 cfg_save()
             end
         end
-        if imgui.Checkbox(u8'Автореконнект при закрытии соединения с сервером', onKicked) then
+        if imgui.Checkbox(u8'ГЂГўГІГ®Г°ГҐГЄГ®Г­Г­ГҐГЄГІ ГЇГ°ГЁ Г§Г ГЄГ°Г»ГІГЁГЁ Г±Г®ГҐГ¤ГЁГ­ГҐГ­ГЁГї Г± Г±ГҐГ°ГўГҐГ°Г®Г¬', onKicked) then
             if not ini.cfg.AutoReconnect then
                 onKicked[0] = not onKicked[0]
-                msg("Автореконнект выключен. Редактирование также отключено")
+                msg("ГЂГўГІГ®Г°ГҐГЄГ®Г­Г­ГҐГЄГІ ГўГ»ГЄГ«ГѕГ·ГҐГ­. ГђГҐГ¤Г ГЄГІГЁГ°Г®ГўГ Г­ГЁГҐ ГІГ ГЄГ¦ГҐ Г®ГІГЄГ«ГѕГ·ГҐГ­Г®")
             else
-                msg("Вы "..(onKicked[0] and "включили" or "выключили") .. " автореконнект при закрытии соединения")          
+                msg("Г‚Г» "..(onKicked[0] and "ГўГЄГ«ГѕГ·ГЁГ«ГЁ" or "ГўГ»ГЄГ«ГѕГ·ГЁГ«ГЁ") .. " Г ГўГІГ®Г°ГҐГЄГ®Г­Г­ГҐГЄГІ ГЇГ°ГЁ Г§Г ГЄГ°Г»ГІГЁГЁ Г±Г®ГҐГ¤ГЁГ­ГҐГ­ГЁГї")          
                 ini.autoreconnect.onKicked = onKicked[0]
                 cfg_save()
             end
         end
-        if imgui.Checkbox(u8'Автореконнект при занятом/неверном нике', onRejected) then
+        if imgui.Checkbox(u8'ГЂГўГІГ®Г°ГҐГЄГ®Г­Г­ГҐГЄГІ ГЇГ°ГЁ Г§Г Г­ГїГІГ®Г¬/Г­ГҐГўГҐГ°Г­Г®Г¬ Г­ГЁГЄГҐ', onRejected) then
             if not ini.cfg.AutoReconnect then
                 onRejected[0] = not onRejected[0]
-                msg("Автореконнект выключен. Редактирование также отключено")
+                msg("ГЂГўГІГ®Г°ГҐГЄГ®Г­Г­ГҐГЄГІ ГўГ»ГЄГ«ГѕГ·ГҐГ­. ГђГҐГ¤Г ГЄГІГЁГ°Г®ГўГ Г­ГЁГҐ ГІГ ГЄГ¦ГҐ Г®ГІГЄГ«ГѕГ·ГҐГ­Г®")
             else
-                msg("Вы "..(onRejected[0] and "включили" or "выключили") .. " автореконнект при занятом/неверном нике")
+                msg("Г‚Г» "..(onRejected[0] and "ГўГЄГ«ГѕГ·ГЁГ«ГЁ" or "ГўГ»ГЄГ«ГѕГ·ГЁГ«ГЁ") .. " Г ГўГІГ®Г°ГҐГЄГ®Г­Г­ГҐГЄГІ ГЇГ°ГЁ Г§Г Г­ГїГІГ®Г¬/Г­ГҐГўГҐГ°Г­Г®Г¬ Г­ГЁГЄГҐ")
                 ini.autoreconnect.onRejected = onRejected[0] 
                 cfg_save()
             end
         end
-        if imgui.SliderFloat(u8'Задержка', Reconnect.delay, 0.0, 1000.0) then
+        if imgui.SliderFloat(u8'Г‡Г Г¤ГҐГ°Г¦ГЄГ ', Reconnect.delay, 0.0, 1000.0) then
             ini.autoreconnect.delay = Reconnect.delay[0]
             cfg_save()
         end 
-if imgui.Button(u8'Закрыть', imgui.ImVec2(-1, 29)) then
+if imgui.Button(u8'Г‡Г ГЄГ°Г»ГІГј', imgui.ImVec2(-1, 29)) then
 recMenu[0] = not recMenu[0]
 end
     imgui.End()
@@ -663,16 +663,16 @@ end
             ini.autologin.password = str(Password)
             cfg_save()
         end
-        if imgui.Button(u8"Очистить поля") then
-            msg("Поля очищены")
+        if imgui.Button(u8"ГЋГ·ГЁГ±ГІГЁГІГј ГЇГ®Г«Гї") then
+            msg("ГЏГ®Г«Гї Г®Г·ГЁГ№ГҐГ­Г»")
             imgui.StrCopy(NickName, '')
             imgui.StrCopy(Password, '')
         end
-        if imgui.Combo(u8"Место спавна", current_item_spawn, items_spawn, #item_spawn) then
+        if imgui.Combo(u8"ГЊГҐГ±ГІГ® Г±ГЇГ ГўГ­Г ", current_item_spawn, items_spawn, #item_spawn) then
             ini.autologin.spawn_use = current_item_spawn[0]
             cfg_save()
         end  
-if imgui.Button(u8'Закрыть', imgui.ImVec2(-1, 29)) then
+if imgui.Button(u8'Г‡Г ГЄГ°Г»ГІГј', imgui.ImVec2(-1, 29)) then
 outhmenu[0] = not outhmenu[0]
 end
     imgui.End()
@@ -698,21 +698,21 @@ imgui.OnFrame(function() return CentralGlMenu[0] end,
         commands = {textlog}
         openlog:close()
     end
-if imgui.Button(faicons("SERVER") .. u8' Лог операций', imgui.ImVec2(200, 50)) then tab = 1 end
-if imgui.Button(faicons("SHOP") .. u8' Скуп', imgui.ImVec2(200, 50)) then tab = 5 end
-if imgui.Button(faicons("GEAR") .. u8' Настройки', imgui.ImVec2(200, 50)) then tab = 2 end
-if imgui.Button(faicons("USER") .. u8' Информация', imgui.ImVec2(200, 50)) then tab = 4 end
+if imgui.Button(faicons("SERVER") .. u8' Г‹Г®ГЈ Г®ГЇГҐГ°Г Г¶ГЁГ©', imgui.ImVec2(200, 50)) then tab = 1 end
+if imgui.Button(faicons("SHOP") .. u8' Г‘ГЄГіГЇ', imgui.ImVec2(200, 50)) then tab = 5 end
+if imgui.Button(faicons("GEAR") .. u8' ГЌГ Г±ГІГ°Г®Г©ГЄГЁ', imgui.ImVec2(200, 50)) then tab = 2 end
+if imgui.Button(faicons("USER") .. u8' Г€Г­ГґГ®Г°Г¬Г Г¶ГЁГї', imgui.ImVec2(200, 50)) then tab = 4 end
 
     imgui.SetCursorPos(imgui.ImVec2(215, 28))
 if imgui.BeginChild('Name', imgui.ImVec2(), true) then
 
 if tab == 1 then 
-if imgui.Button(u8' Выбрать день для просмотра лога', imgui.ImVec2(-1, 29)) then
+if imgui.Button(u8' Г‚Г»ГЎГ°Г ГІГј Г¤ГҐГ­Гј Г¤Г«Гї ГЇГ°Г®Г±Г¬Г®ГІГ°Г  Г«Г®ГЈГ ', imgui.ImVec2(-1, 29)) then
 LogMenu[0] = not LogMenu[0]
 end
 if Param then
 
-imgui.CenterText(u8'Лог за: ' ..Param)
+imgui.CenterText(u8'Г‹Г®ГЈ Г§Г : ' ..Param)
    
     for i = 1, #commands do
         if filter:PassFilter(u8(commands[i])) then
@@ -725,74 +725,74 @@ imgui.EndChild()
 
 elseif tab == 2 then
 		    		
-if imgui.Checkbox(u8'Автореконнект', AutoReconnect) then     
-        msg("Вы "..(AutoReconnect[0] and "включили" or "выключили") .. " автореконнект") 
-        if AutoReconnect[0] then msg("Помните, что на некоторых серверах за это вас могут заблокировать") end
+if imgui.Checkbox(u8'ГЂГўГІГ®Г°ГҐГЄГ®Г­Г­ГҐГЄГІ', AutoReconnect) then     
+        msg("Г‚Г» "..(AutoReconnect[0] and "ГўГЄГ«ГѕГ·ГЁГ«ГЁ" or "ГўГ»ГЄГ«ГѕГ·ГЁГ«ГЁ") .. " Г ГўГІГ®Г°ГҐГЄГ®Г­Г­ГҐГЄГІ") 
+        if AutoReconnect[0] then msg("ГЏГ®Г¬Г­ГЁГІГҐ, Г·ГІГ® Г­Г  Г­ГҐГЄГ®ГІГ®Г°Г»Гµ Г±ГҐГ°ГўГҐГ°Г Гµ Г§Г  ГЅГІГ® ГўГ Г± Г¬Г®ГЈГіГІ Г§Г ГЎГ«Г®ГЄГЁГ°Г®ГўГ ГІГј") end
         ini.cfg.AutoReconnect = AutoReconnect[0]
         cfg_save()
     end
 imgui.SameLine()
 if ini.cfg.AutoReconnect then 
-    if imgui.Button(u8'Настроить автореконнект', imgui.ImVec2(-1, 29)) then
+    if imgui.Button(u8'ГЌГ Г±ГІГ°Г®ГЁГІГј Г ГўГІГ®Г°ГҐГЄГ®Г­Г­ГҐГЄГІ', imgui.ImVec2(-1, 29)) then
     recMenu[0] = not recMenu[0]
     end
 end
-     if imgui.Checkbox(u8'Автологин', AutoLogin) then
+     if imgui.Checkbox(u8'ГЂГўГІГ®Г«Г®ГЈГЁГ­', AutoLogin) then
          ini.config.AutoLogin = AutoLogin[0]
          cfg_save()
     end
 if ini.config.AutoLogin then
-    if imgui.Button(u8'Настроить автологин', imgui.ImVec2(-1, 29)) then
+    if imgui.Button(u8'ГЌГ Г±ГІГ°Г®ГЁГІГј Г ГўГІГ®Г«Г®ГЈГЁГ­', imgui.ImVec2(-1, 29)) then
     outhmenu[0] = not outhmenu[0]
     end
 end 
 imgui.Separator()
-if imgui.Combo(u8'Выбор темы', theme, new['const char*'][#themesList](themesList), #themesList) then 
+if imgui.Combo(u8'Г‚Г»ГЎГ®Г° ГІГҐГ¬Г»', theme, new['const char*'][#themesList](themesList), #themesList) then 
     themes[theme[0]+1].func() 
     iniSave() 
 end
 imgui.Separator()
-if imgui.Checkbox(u8' Открытие меню "Central Helper" при аренде лавки', Lavkaaikib) then
+if imgui.Checkbox(u8' ГЋГІГЄГ°Г»ГІГЁГҐ Г¬ГҐГ­Гѕ "Central Helper" ГЇГ°ГЁ Г Г°ГҐГ­Г¤ГҐ Г«Г ГўГЄГЁ', Lavkaaikib) then
                ini.cfg.Lavkaaikib =  Lavkaaikib[0]
 end
-imgui.InputTextWithHint(u8"Активация", u8"Без слеша!", activation, 256)
+imgui.InputTextWithHint(u8"ГЂГЄГІГЁГўГ Г¶ГЁГї", u8"ГЃГҐГ§ Г±Г«ГҐГёГ !", activation, 256)
 imgui.SameLine()
-	if imgui.Button(u8" Сохранить") then
+	if imgui.Button(u8" Г‘Г®ГµГ°Г Г­ГЁГІГј") then
 		ini.cfg.activation = u8:decode(str(activation))
 		cfg_save()
-		msg("Сохранено! Активация - "..ini.cfg.activation, -1)
+		msg("Г‘Г®ГµГ°Г Г­ГҐГ­Г®! ГЂГЄГІГЁГўГ Г¶ГЁГї - "..ini.cfg.activation, -1)
 		script_reload()
 	end
 imgui.Separator()
-if imgui.Checkbox(u8"Автоeда", eat) then
+if imgui.Checkbox(u8"ГЂГўГІГ®eГ¤Г ", eat) then
     activated = not activated
 end
 if activated then
-    if imgui.Combo(u8"Выберите нужную еду", eat_choice, items, #method) then
+    if imgui.Combo(u8"Г‚Г»ГЎГҐГ°ГЁГІГҐ Г­ГіГ¦Г­ГіГѕ ГҐГ¤Гі", eat_choice, items, #method) then
         ini.eat.eatchoice = eat_choice[0]
         cfg_save()
     end
 end 
 	imgui.Separator()
-	if imgui.Button(u8" Перезагрузить") then script_reload() end
+	if imgui.Button(u8" ГЏГҐГ°ГҐГ§Г ГЈГ°ГіГ§ГЁГІГј") then script_reload() end
 	imgui.SameLine()
-	if imgui.Button(u8" Выгрузить") then script_unload() end
-    if imgui.Button(u8'Обновить(возможно зависание игры на 10-15 секунд)') then
+	if imgui.Button(u8" Г‚Г»ГЈГ°ГіГ§ГЁГІГј") then script_unload() end
+    if imgui.Button(u8'ГЋГЎГ­Г®ГўГЁГІГј(ГўГ®Г§Г¬Г®Г¦Г­Г® Г§Г ГўГЁГ±Г Г­ГЁГҐ ГЁГЈГ°Г» Г­Г  10-15 Г±ГҐГЄГіГ­Г¤)') then
         updateScript(lmUrl, lmPath)
     end
 
 	    elseif tab == 4 then
 imgui.CenterText(u8'Version: ' ..VersionV)
 imgui.CenterText(u8'Author: Theopka')
-				if imgui.Button(faicons("BELL") .. u8" Перейти в ТГК", imgui.ImVec2(-1, 25)) then openLink("https://t.me/TheopkaStudio") end
+				if imgui.Button(faicons("BELL") .. u8" ГЏГҐГ°ГҐГ©ГІГЁ Гў Г’ГѓГЉ", imgui.ImVec2(-1, 25)) then openLink("https://t.me/TheopkaStudio") end
 				imgui.Separator()
-imgui.CenterText(u8' Команды')
-imgui.Text(u8'/cent - Гл.Меню')
-imgui.Text(u8'/recon - Реконект')
-imgui.Text(u8'/calc - Калькулятор')
+imgui.CenterText(u8' ГЉГ®Г¬Г Г­Г¤Г»')
+imgui.Text(u8'/cent - ГѓГ«.ГЊГҐГ­Гѕ')
+imgui.Text(u8'/recon - ГђГҐГЄГ®Г­ГҐГЄГІ')
+imgui.Text(u8'/calc - ГЉГ Г«ГјГЄГіГ«ГїГІГ®Г°')
 
 elseif tab == 5 then
-    if imgui.Button(faicons("play") .. u8" Начать скуп ", imgui.ImVec2(-1, 30)) then
+    if imgui.Button(faicons("play") .. u8" ГЌГ Г·Г ГІГј Г±ГЄГіГЇ ", imgui.ImVec2(-1, 30)) then
         lua_thread.create(function()
             for i = 1, 100 do
                 if boolVariables[i][0] then         
@@ -814,13 +814,13 @@ imgui.Text('')
             if imgui.Checkbox(u8'##toggle_' .. i, boolVariables[i]) then
                 ini.cfg['BindArkt' .. i] = boolVariables[i][0]
             end 
-            imgui.InputTextWithHint(u8'##se_' .. i, u8'Например: Платиновая рулетка', variables[i].se, 255)
+            imgui.InputTextWithHint(u8'##se_' .. i, u8'ГЌГ ГЇГ°ГЁГ¬ГҐГ°: ГЏГ«Г ГІГЁГ­Г®ГўГ Гї Г°ГіГ«ГҐГІГЄГ ', variables[i].se, 255)
             ini.cfg['se' .. i] = u8:decode(str(variables[i].se))
-            imgui.InputTextWithHint(u8'##i_' .. i, u8'Например: "1, 500000"', variables[i].i, 255)
+            imgui.InputTextWithHint(u8'##i_' .. i, u8'ГЌГ ГЇГ°ГЁГ¬ГҐГ°: "1, 500000"', variables[i].i, 255)
             ini.cfg['i' .. i] = u8:decode(str(variables[i].i))
         imgui.EndChild()
     end
-    cfg_save() -- Сохранение значений вынесено за пределы цикла
+    cfg_save() -- Г‘Г®ГµГ°Г Г­ГҐГ­ГЁГҐ Г§Г­Г Г·ГҐГ­ГЁГ© ГўГ»Г­ГҐГ±ГҐГ­Г® Г§Г  ГЇГ°ГҐГ¤ГҐГ«Г» Г¶ГЁГЄГ«Г 
     imgui.EndChild()
 end
     imgui.EndChild()
@@ -834,13 +834,13 @@ function main()
 if not isSampfuncsLoaded() or not isSampLoaded() then return end
 	while not isSampAvailable() do wait(100) end
 	while not sampIsLocalPlayerSpawned() do wait(0) end
-    msg('Скрипт Загружен!')
-    msg('Активация: /'..ini.cfg.activation)
-    msg('Автор Theopka')
+    msg('Г‘ГЄГ°ГЁГЇГІ Г‡Г ГЈГ°ГіГ¦ГҐГ­!')
+    msg('ГЂГЄГІГЁГўГ Г¶ГЁГї: /'..ini.cfg.activation)
+    msg('ГЂГўГІГ®Г° Theopka')
     sampRegisterChatCommand(ini.cfg.activation, ws_toggle)
 sampRegisterChatCommand('recon', function() main_reconnect(0) end)
 sampRegisterChatCommand('calc', function(arg) 
-        if #arg == 0 or not arg:find('%d+') then return sampAddChatMessage('[Калькулятор]: {DE9F00}Ошибка, введите /calc [пример]', 0x08A351) end
+        if #arg == 0 or not arg:find('%d+') then return sampAddChatMessage('[ГЉГ Г«ГјГЄГіГ«ГїГІГ®Г°]: {DE9F00}ГЋГёГЁГЎГЄГ , ГўГўГҐГ¤ГЁГІГҐ /calc [ГЇГ°ГЁГ¬ГҐГ°]', 0x08A351) end
         sampAddChatMessage('[Lavka Market]: {DE9F00}'..arg..' = '..assert(load("return " .. arg))(), 0x08A351)
     end)
   Reconnect.active = false
@@ -855,14 +855,14 @@ sampRegisterChatCommand('calc', function(arg)
                     if(level_type == 5) then
                         lua_thread.create(function()
                             wait(200)
-                            msg("Выбираем место спавна - "..u8:decode(item_spawn[ini.autologin.spawn_use+1]))                      
+                            msg("Г‚Г»ГЎГЁГ°Г ГҐГ¬ Г¬ГҐГ±ГІГ® Г±ГЇГ ГўГ­Г  - "..u8:decode(item_spawn[ini.autologin.spawn_use+1]))                      
                             arzpacket({63, 9, 6, 0, 0, 0, 0, 0, 0, 0}, string.format('%i', ini.autologin.spawn_use)) 
                         end) 
                     end
                     if(level_type == 17) then
                         lua_thread.create(function()
                             wait(2000)
-                            msg("Пробуем авторизоваться под ником - " .. ini.autologin.nickname)
+                            msg("ГЏГ°Г®ГЎГіГҐГ¬ Г ГўГІГ®Г°ГЁГ§Г®ГўГ ГІГјГ±Гї ГЇГ®Г¤ Г­ГЁГЄГ®Г¬ - " .. ini.autologin.nickname)
                             auth(ini.autologin.nickname, ini.autologin.password)
                         end) 
                     end
@@ -870,7 +870,7 @@ sampRegisterChatCommand('calc', function(arg)
                 if(show_type == 0) then
                   lua_thread.create(function()
                         wait(200) 
-                        msg("Пробуем авторизоваться под ником - " .. ini.autologin.nickname)
+                        msg("ГЏГ°Г®ГЎГіГҐГ¬ Г ГўГІГ®Г°ГЁГ§Г®ГўГ ГІГјГ±Гї ГЇГ®Г¤ Г­ГЁГЄГ®Г¬ - " .. ini.autologin.nickname)
                         auth(ini.autologin.nickname, ini.autologin.password)
                   end) 
                 end
@@ -919,18 +919,18 @@ end
 
 function script_reload()
 lua_thread.create(function()
-msg("Скрипт будет перезагружен через 2 секунды!")
+msg("Г‘ГЄГ°ГЁГЇГІ ГЎГіГ¤ГҐГІ ГЇГҐГ°ГҐГ§Г ГЈГ°ГіГ¦ГҐГ­ Г·ГҐГ°ГҐГ§ 2 Г±ГҐГЄГіГ­Г¤Г»!")
 wait(2000)
-msg("Перезагрузка...")
+msg("ГЏГҐГ°ГҐГ§Г ГЈГ°ГіГ§ГЄГ ...")
 thisScript():reload()
 end)
 end
 
 function script_unload()
 lua_thread.create(function()
-msg("Скрипт будет выгружен через 2 секунды!")
+msg("Г‘ГЄГ°ГЁГЇГІ ГЎГіГ¤ГҐГІ ГўГ»ГЈГ°ГіГ¦ГҐГ­ Г·ГҐГ°ГҐГ§ 2 Г±ГҐГЄГіГ­Г¤Г»!")
 wait(2000)
-msg("Выгрузка...")
+msg("Г‚Г»ГЈГ°ГіГ§ГЄГ ...")
 thisScript():unload()
 end)
 end
@@ -951,7 +951,7 @@ end
 		CentralGlMenu[0] = not CentralGlMenu[0]
 	
 	else
-		msg("Скрипт выключен")
+		msg("Г‘ГЄГ°ГЁГЇГІ ГўГ»ГЄГ«ГѕГ·ГҐГ­")
 	end
 end
 
@@ -998,7 +998,7 @@ function main_reconnect(type)
     if type == 1 then
         lua_thread.create(function()
             if Reconnect.active then 
-                msg("Попытка реконнекта была отменена т.к. уже есть существующая")
+                msg("ГЏГ®ГЇГ»ГІГЄГ  Г°ГҐГЄГ®Г­Г­ГҐГЄГІГ  ГЎГ»Г«Г  Г®ГІГ¬ГҐГ­ГҐГ­Г  ГІ.ГЄ. ГіГ¦ГҐ ГҐГ±ГІГј Г±ГіГ№ГҐГ±ГІГўГіГѕГ№Г Гї")
                 return
              end
             Reconnect.active = true
@@ -1030,51 +1030,51 @@ function openLink(link)
     gta._Z12AND_OpenLinkPKc(link)
 end
 function sampev.onAuthenticationRequest()
-  msg("Пытаемся подключиться к серверу.. Попытка: " .. connects)
+  msg("ГЏГ»ГІГ ГҐГ¬Г±Гї ГЇГ®Г¤ГЄГ«ГѕГ·ГЁГІГјГ±Гї ГЄ Г±ГҐГ°ГўГҐГ°Гі.. ГЏГ®ГЇГ»ГІГЄГ : " .. connects)
 end
 
 function sampev.onConnectionRequestAccepted()
-  msg("Подключились. Входим в игру.")
+  msg("ГЏГ®Г¤ГЄГ«ГѕГ·ГЁГ«ГЁГ±Гј. Г‚ГµГ®Г¤ГЁГ¬ Гў ГЁГЈГ°Гі.")
 end
 
 function sampev.onConnectionAttemptFailed()
-  msg("Сервер не отвечает.. Попытка: " .. connects)
+  msg("Г‘ГҐГ°ГўГҐГ° Г­ГҐ Г®ГІГўГҐГ·Г ГҐГІ.. ГЏГ®ГЇГ»ГІГЄГ : " .. connects)
   connects = connects + 1
 end
 
 function sampev.onConnectionNoFreeSlot()
-  msg("Сервер полон.. Попытка: " .. connects)
+  msg("Г‘ГҐГ°ГўГҐГ° ГЇГ®Г«Г®Г­.. ГЏГ®ГЇГ»ГІГЄГ : " .. connects)
   connects = connects + 1
 end
 
 function sampev.onConnectionBanned()
-    msg("Вы забанены на данном сервере")
+    msg("Г‚Г» Г§Г ГЎГ Г­ГҐГ­Г» Г­Г  Г¤Г Г­Г­Г®Г¬ Г±ГҐГ°ГўГҐГ°ГҐ")
     if ini.autoreconnect.onBanned and ini.cfg.AutoReconnect then
-      msg("Реконнектимся..")
+      msg("ГђГҐГЄГ®Г­Г­ГҐГЄГІГЁГ¬Г±Гї..")
       main_reconnect(1)
     end
 end
  
 function sampev.onConnectionPasswordInvalid()
-    msg("Неверный пароль сервера")
+    msg("ГЌГҐГўГҐГ°Г­Г»Г© ГЇГ Г°Г®Г«Гј Г±ГҐГ°ГўГҐГ°Г ")
     if ini.autoreconnect.onPassword and ini.cfg.AutoReconnect then
-      msg("Реконнектимся..")
+      msg("ГђГҐГЄГ®Г­Г­ГҐГЄГІГЁГ¬Г±Гї..")
       main_reconnect(1)
     end
 end
 
 function sampev.onConnectionClosed()
-    msg("Сервер закрыл соединение")
+    msg("Г‘ГҐГ°ГўГҐГ° Г§Г ГЄГ°Г»Г« Г±Г®ГҐГ¤ГЁГ­ГҐГ­ГЁГҐ")
     if ini.autoreconnect.onKicked and ini.cfg.AutoReconnect then
-      msg("Реконнектимся..")
+      msg("ГђГҐГЄГ®Г­Г­ГҐГЄГІГЁГ¬Г±Гї..")
       main_reconnect(1)
     end
 end
 
 function sampev.onConnectionRejected()
-    msg("Недопустимый ник или ник занят.")
+    msg("ГЌГҐГ¤Г®ГЇГіГ±ГІГЁГ¬Г»Г© Г­ГЁГЄ ГЁГ«ГЁ Г­ГЁГЄ Г§Г Г­ГїГІ.")
     if ini.autoreconnect.onRejected and ini.cfg.AutoReconnect then
-      msg("Реконнектимся..")
+      msg("ГђГҐГЄГ®Г­Г­ГҐГЄГІГЁГ¬Г±Гї..")
       main_reconnect(1)
     end
 end
@@ -1100,11 +1100,11 @@ imgui.OnInitialize(function()
     config.MergeMode = true
     config.PixelSnapH = true
     iconRanges = imgui.new.ImWchar[3](faicons.min_range, faicons.max_range, 0)
-    imgui.GetIO().Fonts:AddFontFromMemoryCompressedBase85TTF(faicons.get_font_data_base85('solid'), 14, config, iconRanges) -- solid - тип иконок, так же есть thin, regular, light и duotone
+    imgui.GetIO().Fonts:AddFontFromMemoryCompressedBase85TTF(faicons.get_font_data_base85('solid'), 14, config, iconRanges) -- solid - ГІГЁГЇ ГЁГЄГ®Г­Г®ГЄ, ГІГ ГЄ Г¦ГҐ ГҐГ±ГІГј thin, regular, light ГЁ duotone
 end)
 
 function decor()
-    -- == Декор часть == --
+    -- == Г„ГҐГЄГ®Г° Г·Г Г±ГІГј == --
     imgui.GetStyle().WindowTitleAlign = imgui.ImVec2(0.5, 0.5)
     imgui.GetStyle().WindowRounding = 10.0
     imgui.GetStyle().ChildRounding = 6.0
@@ -1117,7 +1117,7 @@ end
 
 themes = {
 	{
-		name = u8'Зелёная',
+		name = u8'Г‡ГҐГ«ВёГ­Г Гї',
 		func = function()
 			imgui.SwitchContext()
 			local style = imgui.GetStyle()
@@ -1166,7 +1166,7 @@ themes = {
 		end
 	},
 	{
-		name = u8'Красная',
+		name = u8'ГЉГ°Г Г±Г­Г Гї',
 		func = function()
 			imgui.SwitchContext()
 			local style = imgui.GetStyle()
@@ -1211,7 +1211,7 @@ themes = {
 		end
 	},
 	{
-		name = u8'Пурпурная',
+		name = u8'ГЏГіГ°ГЇГіГ°Г­Г Гї',
 		func = function()
 			imgui.SwitchContext()
 			local style = imgui.GetStyle()
@@ -1256,7 +1256,7 @@ themes = {
 		end
 	},
 	{
-		name = u8'Фиолетовая',
+		name = u8'Г”ГЁГ®Г«ГҐГІГ®ГўГ Гї',
 		func = function()
 			imgui.SwitchContext()
 			local style = imgui.GetStyle()
@@ -1301,7 +1301,7 @@ themes = {
 		end
 	},
 	{
-		name = u8'Вишнёвая',
+		name = u8'Г‚ГЁГёГ­ВёГўГ Гї',
 		func = function()
 			imgui.SwitchContext()
 			local style = imgui.GetStyle()
@@ -1347,7 +1347,7 @@ themes = {
 		end
 	},
 	{
-		name = u8'Жёлтая',
+		name = u8'Г†ВёГ«ГІГ Гї',
 		func = function()
 			imgui.SwitchContext()
 			local style = imgui.GetStyle()
@@ -1396,7 +1396,7 @@ themes = {
 		end
 	},
     {
-        name = u8'Тёмна-Синяя',
+        name = u8'Г’ВёГ¬Г­Г -Г‘ГЁГ­ГїГї',
 		func = function ()
             imgui.SwitchContext()
             local style = imgui.GetStyle()
@@ -1446,7 +1446,7 @@ themes = {
         end
     },
     {
-        name = u8'Тёмная',
+        name = u8'Г’ВёГ¬Г­Г Гї',
 		func = function()
             imgui.SwitchContext()
             
